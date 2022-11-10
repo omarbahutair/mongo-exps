@@ -5,9 +5,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "exp": "node index.js"
+    "test": "mocha --recursive  --file test/beforeTest.js test/"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  }
 }
