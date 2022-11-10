@@ -29,8 +29,13 @@ await User.insertMany([
   },
   {
     name: 'John',
-    age: 35,
+    age: 36,
     hobbies: ['hiking', 'camping'],
+    gender: 'male',
+  },
+  {
+    name: 'John',
+    age: 10,
     gender: 'male',
   },
 ]);
@@ -45,6 +50,20 @@ console.log(
           { hobbies: 'football' },
         ],
         age: { $gt: 23, $lt: 40 },
+      },
+    },
+  ])
+);
+
+console.log(
+  await User.aggregate([
+    {
+      $match: { age: { $gte: 10 } },
+    },
+    {
+      $group: {
+        _id: '$name',
+        ageSum: { $avg: '$age' },
       },
     },
   ])
