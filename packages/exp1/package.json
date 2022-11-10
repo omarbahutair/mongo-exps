@@ -1,0 +1,13 @@
+{
+  "name": "exp1",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "exp": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
