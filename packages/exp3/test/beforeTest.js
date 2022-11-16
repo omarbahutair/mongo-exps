@@ -1,11 +1,10 @@
 import mongoose from 'mongoose';
-import { keys } from '@mongodb-exps/config';
+import { MongoMemoryServer } from 'mongodb-memory-server';
 import '../model/Product.js';
 
 before(async () => {
-  await mongoose.connect(keys.mongoURI);
+  const mongoServer = await MongoMemoryServer.create();
+  await mongoose.connect(mongoServer.getUri());
 
-  const Product = mongoose.model('product');
-
-  await Product.collection.drop();
+  await mongoose.model('product').collection.drop();
 });

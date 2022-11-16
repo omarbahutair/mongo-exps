@@ -1,4 +1,3 @@
-import assert from 'assert';
 import mongoose from 'mongoose';
 
 const Product = mongoose.model('product');

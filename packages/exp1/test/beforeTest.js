@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
-import { keys } from '@mongodb-exps/config';
+import { MongoMemoryServer } from 'mongodb-memory-server';
 import '../model/User.js';
 
 before(async () => {
-  await mongoose.connect(keys.mongoURI);
+  const mongoServer = await MongoMemoryServer.create();
+  await mongoose.connect(mongoServer.getUri());
 
   const User = mongoose.model('user');
 
@@ -40,6 +41,4 @@ before(async () => {
       gender: 'male',
     },
   ]);
-
-  console.log('here');
 });
