@@ -16,4 +16,29 @@ describe('Delete', () => {
 
     assert.strictEqual(deletedUser._id.toString(), user._id.toString());
   });
+
+  it('Deletes multiple users', async () => {
+    const users = await User.insertMany([
+      {
+        name: 'first',
+        age: 11,
+      },
+      {
+        name: 'second',
+        age: 24,
+      },
+      {
+        name: 'third',
+        age: 16,
+      },
+    ]);
+
+    const usersIds = users.map((user) => user._id);
+
+    const deletedUsers = await User.deleteMany(
+      { _id: { $in: usersIds } },
+      { returnDocument: true }
+    );
+    console.log(deletedUsers);
+  });
 });
