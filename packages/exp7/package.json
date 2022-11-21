@@ -1,0 +1,17 @@
+{
+  "name": "exp7",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive  --file test/beforeTest.js test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb-memory-server": "^8.10.0",
+    "mongoose": "^6.7.2"
+  }
+}
