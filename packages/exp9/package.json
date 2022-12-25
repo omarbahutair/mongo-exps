@@ -1,5 +1,5 @@
 {
-  "name": "exp7",
+  "name": "exp9",
   "type": "module",
   "version": "1.0.0",
   "description": "",
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongodb-memory-server": "^8.10.0",
-    "mongoose": "^6.7.2"
+    "mongodb-memory-server": "^8.10.1",
+    "mongoose": "^6.7.5"
   }
 }

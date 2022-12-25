@@ -10,9 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "mongoose": "^6.7.2"
-  },
   "devDependencies": {
     "lerna": "^6.0.3"
   },
