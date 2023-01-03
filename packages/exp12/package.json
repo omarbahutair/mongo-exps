@@ -1,0 +1,17 @@
+{
+  "name": "exp12",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --exec mocha --recursive  --file test/beforeTest.js test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb-memory-server": "^8.10.2",
+    "mongoose": "^6.8.2"
+  }
+}

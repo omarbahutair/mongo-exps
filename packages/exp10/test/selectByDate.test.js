@@ -15,4 +15,14 @@ describe('Selects based on date', () => {
       ])
     );
   });
+
+  it('Sorts users be sold', async () => {
+    console.log(
+      await User.aggregate([
+        {
+          $sort: { age: 1 },
+        },
+      ])
+    );
+  });
 });

@@ -19,14 +19,14 @@ beforeEach(async () => {
     },
     {
       name: 'this month',
-      age: 0.083,
+      age: 5,
       dateCreated: new Date(
         `${currentDate.getMonth() + 1}-2-${currentDate.getFullYear()}`
       ),
     },
     {
       name: 'today',
-      age: 0.083,
+      age: 3,
       dateCreated: new Date(),
     },
   ]);
