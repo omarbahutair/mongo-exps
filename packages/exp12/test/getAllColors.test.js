@@ -7,6 +7,7 @@ describe('Gets All Colors: ', () => {
     await Product.insertMany([
       {
         title: 'p1',
+        brand: 'b1',
         combinations: [
           {
             size: 'l',
@@ -22,6 +23,7 @@ describe('Gets All Colors: ', () => {
       },
       {
         title: 'p2',
+        brand: 'b2',
         combinations: [
           {
             size: 'sm',
@@ -52,5 +54,34 @@ describe('Gets All Colors: ', () => {
     ]);
 
     console.log(colors);
+  });
+
+  it('GETS all sizes', async () => {
+    const [{ sizes }] = await Product.aggregate([
+      {
+        $unwind: '$combinations',
+      },
+      {
+        $group: {
+          _id: '*',
+          sizes: { $addToSet: '$combinations.size' },
+        },
+      },
+    ]);
+
+    console.log(sizes);
+  });
+
+  it('GETS all brands', async () => {
+    const [{ brands }] = await Product.aggregate([
+      {
+        $group: {
+          _id: '*',
+          brands: { $addToSet: '$brand' },
+        },
+      },
+    ]);
+
+    console.log(brands);
   });
 });
