@@ -41,19 +41,21 @@ describe('Gets All Colors: ', () => {
   });
 
   it('Gets All Colors', async () => {
-    const [{ colors }] = await Product.aggregate([
+    const [filters] = await Product.aggregate([
       {
         $unwind: '$combinations',
       },
       {
         $group: {
-          _id: '_id',
+          _id: 'filters',
           colors: { $addToSet: '$combinations.color' },
+          sizes: { $addToSet: '$combinations.size' },
+          brands: { $addToSet: '$brand' },
         },
       },
     ]);
 
-    console.log(colors);
+    console.log(filters);
   });
 
   it('GETS all sizes', async () => {
