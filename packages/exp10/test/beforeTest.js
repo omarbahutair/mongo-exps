@@ -1,6 +1,7 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import '../model/User.js';
+import '../model/Product.js';
 
 before(async () => {
   const mongoServer = await MongoMemoryServer.create();
