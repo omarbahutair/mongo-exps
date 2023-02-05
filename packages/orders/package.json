@@ -1,0 +1,17 @@
+{
+  "name": "orders",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --exec mocha --recursive  --file test/beforeTest.js test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.4",
+    "mongodb-memory-server": "^8.11.4"
+  }
+}

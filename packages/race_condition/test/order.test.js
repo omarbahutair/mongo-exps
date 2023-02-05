@@ -48,11 +48,14 @@ describe('Race condition test', () => {
 
   it('Avoid Race Condition', (done) => {
     const order = async (id, amount) => {
-      await Product.updateMany(
-        { _id: id, quantity: { $gte: amount } },
-        { $inc: { quantity: -amount } },
-        { new: true }
-      );
+      await Product.bulkWrite([
+        {
+          updateOne: {
+            filter: { _id: id, quantity: { $gte: amount } },
+            update: { $inc: { quantity: -amount } },
+          },
+        },
+      ]);
     };
 
     async.parallel(
