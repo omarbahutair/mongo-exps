@@ -1,0 +1,20 @@
+{
+  "name": "race_condition",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon --exec mocha --recursive  --file test/beforeTest.js test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.2.4",
+    "mocha": "^10.2.0",
+    "mongodb": "^5.0.0",
+    "mongodb-memory-server": "^8.11.4",
+    "mongoose": "^6.9.0"
+  }
+}
